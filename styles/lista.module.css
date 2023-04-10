@@ -1,0 +1,19 @@
+.container{
+  background-image: linear-gradient(90deg, rgb(255, 238, 178), rgb(255, 227, 162));
+}
+
+.ul{
+  display: flex;
+  list-style: none;
+  align-items: center;
+  flex-wrap: wrap
+}
+
+.li{
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  width: 230px;
+}
