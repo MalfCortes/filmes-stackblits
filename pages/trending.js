@@ -10,7 +10,7 @@ export default (props) => {
       <ul className={styles.ul}>
         {props.json.results.map((i)=>(
         <li className={styles.li} key={i.title}>
-          <a href={`https://nextjsrjyhvx-bouu--3000--b5037fed.local-credentialless.webcontainer.io/pokemon/${i.id}`}>
+          <a href={`/filme/${i.id}`}>
           <h4>{i.title || i.name}</h4>
           <img src={`https://image.tmdb.org/t/p/original/${i.poster_path}`} alt={i.title} width='150'/>
           </a>
