@@ -1,18 +1,19 @@
-import Layout from '../componentes/layout.js'
+import Banner from '../componentes/banner.js'
 import styles from '../styles/lista.module.css'
 
 export default (props) => {
   
   return(
     <div className={styles.container}>
+      <Banner />
       <h1>Tops da semana</h1>
       
       <ul className={styles.ul}>
         {props.json.results.map((i)=>(
         <li className={styles.li} key={i.title}>
           <a href={`/pokemon/${i.id}`}>
-          <h4>{i.title || i.name}</h4>
-          <img src={`https://image.tmdb.org/t/p/original/${i.poster_path}`} alt={i.title} width='150'/>
+          <h5>{i.title || i.name}</h5>
+          <img className={styles.image} src={`https://image.tmdb.org/t/p/original/${i.poster_path}`} alt={i.title} width='100px'/>
           </a>
         </li>
       ))}

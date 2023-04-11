@@ -1,20 +1,22 @@
 import Layout from "../../componentes/layout.js"
-import { useRouter } from 'next/router'
-
+import styles from '../../styles/poke.module.css'
 
 export default (props) =>{
 
-  
-  const router = useRouter()
-  const { pid } = router.query
-
   return(
-    <Layout>
+    <Layout image={`https://image.tmdb.org/t/p/original/${props.json.backdrop_path}`}>
       <a href='/produtos'>Voltar</a>
+      
       <h1>{props.json.original_title}</h1>
-      <img src={`https://image.tmdb.org/t/p/original/${props.json.poster_path}`} alt="" width="300px" />
-      <h4>{props.json.overview}</h4>
-      <h4>Votação: {props.json.vote_average}</h4>
+      
+      <div className={styles.fundo}>
+        <img src={`https://image.tmdb.org/t/p/original/${props.json.poster_path}`} alt="" width="300px" />
+        <div className={styles.overview}>
+          <h4>{props.json.overview}</h4>
+          <h4>Votação: {props.json.vote_average}</h4>   
+        </div>
+        
+      </div>
       
     </Layout>
   )
